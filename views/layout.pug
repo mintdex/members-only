@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+        a.navbar-brand(href="/") Secret Message  
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        div#navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+                if currentUser
+                    li.nav-item
+                        a.nav-link(href="/message/create") Create a message
+                    li.nav-item
+                        a.nav-link(href="/membership") Join club
+                    li.nav-item
+                        a.nav-link(href="/admin") Become The One
+                    li.nav-item
+                        a.nav-link(href="/log-out") Log Out
+                else
+                    li.nav-item
+                        a.nav-link(href="/sign-in") Sign In
+                    li.nav-item    
+                        a.nav-link(href="/sign-up") Sign up
+    block content

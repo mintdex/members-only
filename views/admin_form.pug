@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    h1= title 
+
+    form(action="", method="post")
+        div.form-group 
+            label(for="admin_secret") Admin PassCode 
+            input#admin_secret.form-control(type="text" name="admin_secret" placeholder="Secret code")
+        button.btn.btn-primary(type="submit") Submit
+
+    if error
+        ul
+            li!= error
