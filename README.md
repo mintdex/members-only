@@ -8,3 +8,5 @@
         + npm run start
         + Membership code (Join Club): member
         + Admin code: admin
+
+Live demo: https://fathomless-bastion-59815.herokuapp.com/
